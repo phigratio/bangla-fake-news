@@ -1,0 +1,5 @@
+google-generativeai
+sentence-transformers
+pandas
+scikit-learn
+deep-translator

@@ -1,0 +1,15 @@
+REQUIREMENTS (COMPLETED):
+1. ✅ 5 (size of N) -> 1,3,5 (size of K) - Implemented K_SELECTION_OPTIONS = [1, 3, 5]
+2. ✅ Keep authentic as it is. Augment fake data and train test split only fake data - Only fake articles are augmented
+3. ✅ Use articles in place of the single line paraphrases - Updated prompts for article-level paraphrasing
+4. ✅ Id of augmented data - IDs tracked with suffix (F1 -> F1a, F1b, F1c...), Real articles use R prefix
+
+IMPLEMENTATION DETAILS:
+- Separate datasets: LabeledAuthentic-7K.csv (real) and LabeledFake-1K.csv (fake)
+- Split ratio: 70% train, 30% test for each dataset separately
+- Real articles: Kept as-is with IDs like R0, R1, R2...
+- Fake articles: Augmented with IDs like F1a, F1b, F1c... (from original F1)
+- Prompts updated to handle full articles with [BEGINARTICLE]...[ENDARTICLE] tags
+- Final training set includes: Real (original) + Fake (original) + Fake (augmented)
+- Test set includes: Real + Fake (no augmentation)
+- Output files named with K value: final_train_augmented_K3.csv
